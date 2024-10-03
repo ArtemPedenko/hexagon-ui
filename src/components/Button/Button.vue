@@ -8,11 +8,11 @@
 		},
 		size: {
 			type: String as PropType<'small' | 'medium' | 'large'>,
-			default: 'medium',
+			default: 'medium' as const,
 		},
 		color: {
 			type: String as PropType<'primary' | 'secondary'>,
-			default: 'primary',
+			default: 'primary' as const,
 		},
 	});
 </script>
