@@ -1,0 +1,38 @@
+{
+	"name": "hexagon-ui1",
+	"private": false,
+	"version": "0.0.3",
+	"type": "module",
+	"main": "./dist/dragonekui.umd.ts",
+	"module": "./dist/dragonekui.es.ts",
+	"types": "./dist/components/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/dragonekui.es.ts",
+			"require": "./dist/dragonekui.umd.ts"
+		},
+		"./styles": "./dist/style.css"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@types/node": "^22.7.4",
+		"vue": ">=3"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.1.2",
+		"typescript": "^5.5.3",
+		"vite": "^5.4.1",
+		"vite-plugin-dts": "^4.2.3",
+		"vue-tsc": "^2.0.29"
+	},
+	"peerDependencies": {
+		"vue": ">=3"
+	}
+}
