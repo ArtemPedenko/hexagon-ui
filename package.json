@@ -1,7 +1,7 @@
 {
 	"name": "hexagon-ui1",
 	"private": false,
-	"version": "0.0.3",
+	"version": "0.0.7",
 	"type": "module",
 	"main": "./dist/dragonekui.umd.ts",
 	"module": "./dist/dragonekui.es.ts",
