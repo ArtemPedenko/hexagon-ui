@@ -1,27 +1,15 @@
 <script lang="ts" setup>
-	import { defineProps, PropType } from 'vue';
+	import type { ButtonProps } from './types';
 
-	const props = defineProps({
-		disabled: {
-			type: Boolean,
-			default: false,
-		},
-		size: {
-			type: String as PropType<'small' | 'medium' | 'large'>,
-			default: 'medium' as const,
-		},
-		color: {
-			type: String as PropType<'primary' | 'secondary'>,
-			default: 'primary' as const,
-		},
-	});
+	defineProps<ButtonProps>();
 </script>
 
 <template>
 	<button
 		class="button"
-		:class="[props.size, props.color]"
-		:disabled="props.disabled"
+		:class="[size, color]"
+		:disabled="disabled"
+		@click="onClick"
 	>
 		<slot name="left-icon" />
 		<slot />
@@ -29,26 +17,41 @@
 	</button>
 </template>
 
-<style>
+<style scoped>
 	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		font-weight: 500;
+		border: none;
+		cursor: pointer;
+		transition: all 0.2s ease;
 		color: #ffffff;
 		outline: none;
-		border: 1px solid red;
 		padding: 0 16px;
+	}
+
+	.button:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 
 	.small {
 		height: 32px;
+		font-size: 14px;
 		border-radius: 8px;
 	}
 
 	.medium {
 		height: 36px;
+		font-size: 16px;
 		border-radius: 10px;
 	}
 
 	.large {
 		height: 40px;
+		font-size: 18px;
 		border-radius: 12px;
 	}
 
@@ -56,7 +59,15 @@
 		background: #535bf2;
 	}
 
+	.primary:hover:not(:disabled) {
+		background: #4347d9;
+	}
+
 	.secondary {
 		background: #a7a7a7;
+	}
+
+	.secondary:hover:not(:disabled) {
+		background: #959595;
 	}
 </style>

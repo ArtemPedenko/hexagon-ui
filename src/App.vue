@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 	import './style.css';
 	import Button from './components/Button/Button.vue';
 </script>
@@ -9,4 +9,4 @@
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped></style> -->
